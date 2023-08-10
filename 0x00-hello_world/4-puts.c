@@ -1,6 +1,6 @@
 #include <stdio.h>
 /*
- * main :i used it to print the sentence below using put
+ * main -i used it to print the sentence below using put
  * Return : return 0
  */
 int main(void)
