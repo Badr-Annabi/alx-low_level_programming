@@ -26,7 +26,7 @@ int main(void)
 	{
 		h1 = fbh11 + fbh21;
 		h2 = fbh12 + fbh22;
-		if (fbh12 + fbh 22 > 9999999999)
+		if (fbh12 + fbh22 > 9999999999)
 		{
 			h1 += 1;
 			h2 %= 10000000000;
