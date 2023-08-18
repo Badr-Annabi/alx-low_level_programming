@@ -10,7 +10,7 @@
 int main(void)
 {
 	long int n;
-	int i;
+	long int i;
 	long int lg;
 
 	n = 612852475143;
