@@ -8,31 +8,20 @@
 
 char *leet(char *str)
 {
-	int i = 0;
+	int i, j;
 
-	while (str[i] != '\0')
+	char mod[] = "aAeEoOtTlL";
+	char ch[] = "4433007711";
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == 'a' || str[i] == 'A')
+		for (j = 0; j < 10; j++)
 		{
-			str[i] = 52;
+			if (str[i] == mod[j])
+			{
+				str[i] = ch[j];
+			}
 		}
-		if (str[i] == 'e' || str[i] == 'E')
-		{
-			str[i] = 51;
-		}
-		if (str[i] == 'o' || str[i] == 'O')
-		{
-			str[i] = 48;
-		}
-		if (str[i] == 't' || str[i] == 'T')
-		{
-			str[i] = 55;
-		}
-		if (str[i] == 'l' || str[i] == 'L')
-		{
-			str[i] = 49;
-		}
-		i++;
 	}
 	return (str);
 }
