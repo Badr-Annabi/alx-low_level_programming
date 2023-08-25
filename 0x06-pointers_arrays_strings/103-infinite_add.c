@@ -11,10 +11,11 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int a = 0, b = 0, c = 0, a1, b1, sum, big;
 
-	while (n1[a] != '\0')
+	while (n1[a] != '\0' && n2[b] != '\0')
+	{
 		a++;
-	while (n2[b] != '\0')
 		b++;
+	}
 	if (a > b)
 		big = a;
 	else
@@ -35,11 +36,14 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		else
 			sum = c;
 		if (sum > 9)
-			c = sum / 10;
+		{	c = sum / 10;
 			sum = (sum % 10) + '0';
+		} 
 		else
+		{
 			c = 0;
 			sum = sum + '0';
+		}
 		r[big] = sum;
 		a1--;
 		b1--;
