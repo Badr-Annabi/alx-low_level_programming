@@ -11,7 +11,7 @@ char *rot13(char *str)
 	int i, j;
 
 	char Bf[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char Rot[] = "NOPQRSTUWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char Rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
