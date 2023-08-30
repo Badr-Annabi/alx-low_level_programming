@@ -6,7 +6,7 @@
  * Return: real sqrt of n.
  */
 
- int _helper_sqrt(int n, int i);
+int _helper_sqrt(int n, int i);
 
 
 
