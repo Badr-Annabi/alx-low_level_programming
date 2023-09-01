@@ -2,10 +2,10 @@
 #include "main.h"
 
 /**
- * main - prints all arguments it receives
- * @args: first argument.
+ * main - prints all arguments it receives.
+ * @argc: first argument.
  * @argv: second argument.
- * Reurn: Always (0) Success.
+ * Return: Always (0) Success.
  */
 int main(int argc, char *argv[])
 {
