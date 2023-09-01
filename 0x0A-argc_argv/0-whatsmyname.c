@@ -2,7 +2,7 @@
 #include "main.h"
 /**
  * main - prints its name, followed by a new line.
- * @argv: first argument argc.
+ * @argc: first argument argc.
  * @argv: second arguments argv.
  * Return: 0
  */
