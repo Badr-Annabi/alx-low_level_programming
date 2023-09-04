@@ -3,7 +3,7 @@
 
 /**
  * free_grid - frees a 2 dimensional grid previously created.
- * @grid:
+ * @grid: the array that we want to free.
  * @height: the height of the array.
  */
 
