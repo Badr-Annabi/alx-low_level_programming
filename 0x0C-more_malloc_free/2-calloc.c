@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 
-char *set_ptr(char *str,int a,unsigned int n);
+char *set_ptr(char *str, int a, unsigned int n);
 
 /**
  * set_ptr - seting elements of ptr to 0
@@ -34,7 +34,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	ptr = malloc(sizeof(unsigned int) * (nmemb * size));
+	ptr = malloc(nmemb * size);
 
 	if (ptr == NULL)
 		return (NULL);
