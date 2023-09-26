@@ -7,7 +7,7 @@
  * Return: adress to the node where the loop starts.
  */
 
-listint_t *find_listint_loop(listint_t *head)
+listint_t *find_loop(listint_t *head)
 {
 	listint_t *loop, *node;
 
@@ -39,7 +39,7 @@ size_t free_listint_safe(listint_t **h)
 	if (h == NULL || *h == NULL)
 		return (0);
 
-	node = find_listint_loop(*h);
+	node = find_loop(*h);
 	for (len = 0; (*h != node || i) && *h != NULL; *h = next)
 	{
 		len++;
