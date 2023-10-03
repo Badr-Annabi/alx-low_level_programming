@@ -21,18 +21,21 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	file_to = open(argv[2], O_WRONLY | O_CREAR | O_TRUNC, PERMISSIONS);
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,S_IRUSR | S_IWUSR
+			| S_IRGRP | S_IWGRP | S_IROTH);
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILRNO, "Error: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		close(file_from), exit(99);
 	}
-	while (n = 1024)
+	while (n == 1024)
 	{
 		n = read(file_from, buffer, 1024);
 		if (n == -1)
+		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
+		}
 		m = write(file_to, buffer, n);
 		if (m < n)
 			dprintf(STDERR_FILENO, "Error Can't write to %s\n", argv[2]), exit(99);
