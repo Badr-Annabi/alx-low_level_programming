@@ -1,6 +1,6 @@
 #include "main.h"
 
-#define PERMISSIONS (S_IRUSE | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
+#define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 
 /**
  * main - function that copies the content of a file
