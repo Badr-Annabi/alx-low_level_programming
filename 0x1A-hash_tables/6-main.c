@@ -38,11 +38,3 @@ int main(void)
     hash_table_delete(ht);
     return (EXIT_SUCCESS);
 }
-julien@ubuntu:~/0x1A. Hash tables$ gcc -Wall -pedantic -Werror -Wextra 6-main.c 0-hash_table_create.c 1-djb2.c 2-key_index.c 3-hash_table_set.c 4-hash_table_get.c 5-hash_table_print.c 6-hash_table_delete.c -o g
-julien@ubuntu:~/0x1A. Hash tables$ valgrind ./g
-==6621== Memcheck, a memory error detector
-==6621== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
-==6621== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
-==6621== Command: ./g
-==6621== 
-{'Betty': 'Cool', 'mentioner': 'Bob', 'hetairas': 'Bob Z Chu', 'python': 'awesome', 'Bob': 'and Kris love asm', '98': 'Battery Street', 'N': 'queens', 'c': 'fun', 'Tim': 'Britton', 'Asterix': 'Obelix'}
