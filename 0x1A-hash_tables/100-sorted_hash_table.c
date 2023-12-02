@@ -110,6 +110,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		shead->snext = NULL;
 		shead->sprev = NULL;
 		ht->array[index] = shead;
+		hash_table_sort(ht, shead);
+		return (1);
 	}
 
 	else
@@ -173,10 +175,12 @@ void shash_table_print(const shash_table_t *ht)
 	shash_node_t *tmp;
 	unsigned long int flag = 0;
 
-	tmp = ht->shead;
-
 	if (ht == NULL || ht->array == NULL)
+	{
+		printf("{}\n");
 		return;
+	}
+	tmp = ht->shead;
 	printf("{");
 	while (tmp != NULL)
 	{
@@ -195,12 +199,18 @@ void shash_table_print(const shash_table_t *ht)
  */
 void shash_table_print_rev(const shash_table_t *ht)
 {
-	shash_node_t *tmp = ht->stail;
+	shash_node_t *tmp;
 	unsigned long int flag = 0;
 
 	if (ht == NULL || ht->array == NULL)
+	{
+		printf("{}\n");
 		return;
-	printf("{");
+	}
+
+	tmp = ht->stail;
+    printf("{");
+    
 	while (tmp)
 	{
 		if (flag == 1)
