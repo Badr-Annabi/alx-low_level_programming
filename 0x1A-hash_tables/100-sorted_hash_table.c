@@ -209,8 +209,8 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 
 	tmp = ht->stail;
-    printf("{");
-    
+	printf("{");
+
 	while (tmp)
 	{
 		if (flag == 1)
