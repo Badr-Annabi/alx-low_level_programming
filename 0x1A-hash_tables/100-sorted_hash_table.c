@@ -24,7 +24,10 @@ shash_table_t *shash_table_create(unsigned long int size)
 	table->array = (shash_node_t **)calloc(
 			table->size, sizeof(shash_node_t **));
 	if (!table->array)
+	{
+		free(table);
 		return (NULL);
+	}
 	for (i = 0; i < table->size; i++)
 		table->array[i] = NULL;
 
@@ -41,43 +44,30 @@ void hash_table_sort(shash_table_t *ht, shash_node_t *node)
 {
 	shash_node_t *tmp;
 
-	tmp = ht->shead;
-	while (tmp && strcmp(tmp->key, node->key) < 0)
-		tmp = tmp->snext;
-
-
-	if (!ht->shead && !ht->stail)
+	if (ht->shead == NULL && ht->stail == NULL)
 	{
-		node->snext = NULL;
-		node->sprev = NULL;
-		ht->shead = node;
-		ht->stail = node;
+		ht->shead = ht->stail = node;
+		return;
 	}
-	else
+	tmp = ht->shead;
+	while (tmp != NULL)
 	{
-		if (tmp == NULL)
-		{
-			tmp = ht->stail;
-			node->snext = NULL;
-			tmp->snext = node;
-			node->sprev = tmp;
-			ht->stail = node;
-		}
-		else if (tmp == ht->shead)
-		{
-			node->snext = tmp;
-			node->sprev = NULL;
-			tmp->sprev = node;
-			ht->shead = node;
-		}
-		else
+		if (strcmp(node->key, tmp->key) < 0)
 		{
 			node->snext = tmp;
 			node->sprev = tmp->sprev;
-			tmp->sprev->snext = node;
 			tmp->sprev = node;
+			if (node->sprev != NULL)
+				node->sprev->snext = node;
+			else
+				ht->shead = node;
+			return;
 		}
+		tmp = tmp->snext;
 	}
+	node->sprev = ht->stail;
+	ht->stail->snext = node;
+	ht->stail = node;
 }
 
 /**
