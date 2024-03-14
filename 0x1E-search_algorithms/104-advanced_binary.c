@@ -16,10 +16,10 @@ int advanced_binary(int *array, size_t size, int value)
 
 	if (array == NULL || size == 0)
 		return (-1);
-	half = size / 2;
+	half = (size - 1) / 2;
 	printf("Searching in array: ");
 	for (i = 0; i < size; i++)
-		printf("%s %d", (i == 0) ? "" : ",", array[i]);
+		printf("%s %d", (i == 0) ? ":" : ",", array[i]);
 	printf("\n");
 
 	if (value == array[half])
