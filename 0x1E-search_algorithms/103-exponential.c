@@ -6,7 +6,7 @@
  * @left: the first index
  * @right: the last index
  */
-void print_array(int *array, size_t left, size_t right);
+void display_array(int *array, size_t left, size_t right);
 
 
 /**
@@ -39,7 +39,7 @@ int exponential_search(int *array, size_t size, int value)
 	printf("Value found between indexes [%ld] and [%ld]\n", left, right);
 	while (left <= right)
 	{
-		print_array(array, left, right);
+		display_array(array, left, right);
 		mid = (left + right) / 2;
 
 		if (value < array[mid])
@@ -54,13 +54,13 @@ int exponential_search(int *array, size_t size, int value)
 }
 
 /**
- * print_array - This function an array or a section of it
+ * display_array - This function an array or a section of it
  * @array: a pointer to the first element of the array.
  * @left: the first index
  * @right: the last index
  */
 
-void print_array(int *array, size_t left, size_t right)
+void display_array(int *array, size_t left, size_t right)
 {
 	printf("Searching in array: ");
 	while (left < right)
